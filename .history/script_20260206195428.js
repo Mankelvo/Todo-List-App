@@ -11,7 +11,7 @@ const tasks = [];
 
  function addTask(){
     const inputValue= inputBox.value ;
-  console.log()
+ 
 if(inputValue.trim()==="" || inputValue===null){
 alert("Please enter a value");
 return;
@@ -21,7 +21,7 @@ const task = {
 };
 tasks.push(task);
 saveTasks();
-renderTasks()
+renderTasks();
 
 }
 function saveTasks(){
@@ -40,18 +40,25 @@ listItems.appendChild(li);
 inputBox.value = "";
 
     });
-    saveTasks();
 
+}
+
+function LoadTasks(){
+    const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+    if(savedTasks){
+        tasks.push(...saveTasks);
+        renderTasks();
+    }
 }
 
 
 
 
- /*addBtn.addEventListener("click", ()=>
-addTask());*/
+ addBtn.addEventListener("click", ()=>
+addTask());
 
  listItems.addEventListener("click", (e)=>{
-addTask()
+
 if(e.target.classList.contains("deleteBtn")){
     e.target.parentElement.remove();
   
@@ -60,4 +67,4 @@ if(e.target.classList.contains("deleteBtn")){
  
  
 
- //window.addEventListener("DOMContentLoaded",LoadTasks);
+ window.addEventListener("DOMContentLoaded",LoadTasks);
