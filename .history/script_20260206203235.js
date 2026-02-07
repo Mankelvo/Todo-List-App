@@ -61,7 +61,7 @@ function clearList(){
 
  addBtn.addEventListener("click", ()=>
 addTask());
- clearBtn.addEventListener("click", ()=>clearList());
+ clearBtn.ad
 
  listItems.addEventListener("click", (e)=>{
 

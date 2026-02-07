@@ -4,7 +4,7 @@
 //select elements from the DOM
 const inputBox = document.getElementById("inputBox");
  const addBtn = document.getElementById("addBtn");
-  const clearBtn = document.getElementById("clearBtn");
+  const clearBtn = document.getElementById("addBtn");
 
  const listItems = document.querySelector(".listItems");
 
@@ -61,7 +61,6 @@ function clearList(){
 
  addBtn.addEventListener("click", ()=>
 addTask());
- clearBtn.addEventListener("click", ()=>clearList());
 
  listItems.addEventListener("click", (e)=>{
 
